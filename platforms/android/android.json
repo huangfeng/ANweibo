@@ -1,0 +1,124 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"YCWeibo\"><param name=\"android-package\" value=\"org.zy.yuancheng.weibo.YCWeibo\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://open.weibo.cn/*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://login.sina.com.cn/*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://passport.weibo.cn/*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"http://*.sinaimg.cn/*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://api.weibo.com/*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"WEIBO_APP_ID\" value=\"3884916243\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<activity android:configChanges=\"keyboardHidden|orientation\" android:exported=\"false\" android:name=\"com.sina.weibo.sdk.component.WeiboSdkBrowser\" android:theme=\"@android:style/Theme.NoTitleBar.Fullscreen\" android:windowSoftInputMode=\"adjustResize\"></activity>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:configChanges=\"keyboardHidden|orientation\" android:exported=\"false\" android:name=\"com.sina.weibo.sdk.register.mobile.MobileRegisterActivity\" android:screenOrientation=\"portrait\" android:windowSoftInputMode=\"adjustResize\"></activity>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:configChanges=\"keyboardHidden|orientation\" android:exported=\"false\" android:name=\"com.sina.weibo.sdk.register.mobile.SelectCountryActivity\" android:windowSoftInputMode=\"adjustResize\"></activity>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:configChanges=\"keyboardHidden|orientation\" android:name=\"org.zy.yuancheng.weibo.YCWeiboShareCallback\" android:screenOrientation=\"portrait\"><intent-filter><action android:name=\"com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY\" /><category android:name=\"android.intent.category.DEFAULT\" /></intent-filter></activity>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:exported=\"false\" android:name=\"com.sina.weibo.sdk.net.DownloadService\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-weibosdk": {
+            "WEIBO_APP_ID": "3884916243",
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/cordova-plugin-weibosdk/www/ycweibo.js",
+            "id": "cordova-plugin-weibosdk.ycweibo",
+            "clobbers": [
+                "YCWeibo"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-whitelist/whitelist.js",
+            "id": "cordova-plugin-whitelist.whitelist",
+            "runs": true
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-weibosdk": "0.3.4",
+        "cordova-plugin-whitelist": "1.2.1"
+    }
+}
